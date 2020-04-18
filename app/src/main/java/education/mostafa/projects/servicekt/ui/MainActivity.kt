@@ -21,13 +21,13 @@ class MainActivity : AppCompatActivity(), main_view {
     lateinit var second_num_txt: EditText
     lateinit var operations_spin: Spinner
     lateinit var result_txt:TextView
-    var res: Int = 0
+    var res: Float = 0F
 
     //https://www.techotopia.com/index.php/Kotlin_Android_Broadcast_Intents_and_Broadcast_Receivers
     private val opersResReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             if(intent!!.hasExtra("result")){
-                res = intent.getIntExtra("result" , 0)
+                res = intent.getFloatExtra("result" , 0F)
                 setRest(res)
                 Log.i("ResultRecieved" , res.toString())
             }
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity(), main_view {
 
 
     override fun initOperations() {
-        var math_operations = arrayOf(
+        val math_operations = arrayOf(
             resources.getString(R.string.operations),
             resources.getString(R.string.sum),
             resources.getString(R.string.sub),
@@ -73,8 +73,8 @@ class MainActivity : AppCompatActivity(), main_view {
 
                 if (position != 0) {
                     if (validInputs()) {
-                        var firstNum = first_num_txt.text.toString().toIntOrNull()
-                        var secondNum = second_num_txt.text.toString().toIntOrNull()
+                        val firstNum = first_num_txt.text.toString().toFloatOrNull()
+                        val secondNum = second_num_txt.text.toString().toFloatOrNull()
 
                         val intent = Intent(applicationContext, MyIntentService::class.java)
                             .putExtra("first_num" , firstNum)
@@ -98,12 +98,12 @@ class MainActivity : AppCompatActivity(), main_view {
     }
 
     override fun validInputs(): Boolean {
-        if (first_num_txt.text.toString().isNullOrEmpty()) {
+        if (first_num_txt.text.isNullOrEmpty()) {
             result_txt.setText("")
             first_num_txt.setError(resources.getString(R.string.num_error))
             operations_spin.setSelection(0)
             return false
-        } else if (second_num_txt.text.toString().isNullOrEmpty()) {
+        } else if (second_num_txt.text.isNullOrEmpty()) {
             result_txt.setText("")
             operations_spin.setSelection(0)
             second_num_txt.setError(resources.getString(R.string.num_error))
@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity(), main_view {
             return true
     }
 
-    override fun setRest(res: Int) {
+    override fun setRest(res: Float) {
         if(res != null){
             result_txt.setText(res.toString())
         }

@@ -4,5 +4,5 @@ interface main_view {
     fun initViews()
     fun initOperations()
     fun validInputs():Boolean
-    fun setRest(res:Int)
+    fun setRest(res:Float)
 }

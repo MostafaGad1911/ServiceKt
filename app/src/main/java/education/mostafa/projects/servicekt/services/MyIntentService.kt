@@ -10,18 +10,18 @@ import education.mostafa.projects.servicekt.helpers.Constants
 // https://www.techotopia.com/index.php/Android_Started_Service_%E2%80%93_A_Kotlin_Example
 class MyIntentService : Service() {
 
-    var result: Int = 0
+    var result: Float = 0F
 
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.i("OperationService" , "Started")
-        var first = intent!!.getIntExtra("first_num", 0)
-        var second = intent!!.getIntExtra("second_num", 0)
+        val first = intent!!.getFloatExtra("first_num", 0F)
+        val second = intent!!.getFloatExtra("second_num", 0F)
 
         Log.i("first_num" , first.toString())
         Log.i("second_num" , second.toString())
 
-        var Oper = intent!!.getStringExtra("Oper")
+        var Oper:String? = intent!!.getStringExtra("Oper")
         Log.i("Oper" , Oper)
 
         if (Oper == Constants.SUM) {
