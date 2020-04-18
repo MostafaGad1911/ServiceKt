@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ServiceKt</string>
+
+    // Main
+    <string name="operations">العمليات الحسابية</string>
+    <string name="sum">الجمع</string>
+    <string name="sub">الطرح</string>
+    <string name="mul">الضرب</string>
+    <string name="div">القسمة</string>
+
+    <string name="num_error">من فضلك أكتب الرقم ..</string>
+</resources>

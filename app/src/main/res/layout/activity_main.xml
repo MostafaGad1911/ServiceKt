@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/_10sdp"
+    android:paddingEnd="@dimen/_10sdp"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/first_num_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter firest number"
+        android:inputType="number"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/second_num_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Enter second number"
+        android:inputType="number"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintTop_toBottomOf="@id/first_num_txt" />
+
+    <LinearLayout
+        android:id="@+id/ops_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:layoutDirection="rtl"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/second_num_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:weightSum="5">
+
+        <Spinner
+            android:id="@+id/operations_spin"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_weight="4.6"
+            android:background="@null"
+            android:singleLine="true"
+            android:spinnerMode="dropdown" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".4"
+            app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp"
+            tools:ignore="VectorDrawableCompat"></ImageView>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/result_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintTop_toBottomOf="@id/ops_lyt"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
