@@ -1,4 +1,4 @@
-package education.mostafa.projects.servicekt
+package education.mostafa.projects.servicekt.ui
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import education.mostafa.projects.servicekt.R
 import education.mostafa.projects.servicekt.helpers.Constants
 import education.mostafa.projects.servicekt.interfaces.main_view
 import education.mostafa.projects.servicekt.services.MyIntentService
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity(), main_view {
     lateinit var result_txt:TextView
     var res: Int = 0
 
+    //https://www.techotopia.com/index.php/Kotlin_Android_Broadcast_Intents_and_Broadcast_Receivers
     private val opersResReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             if(intent!!.hasExtra("result")){
