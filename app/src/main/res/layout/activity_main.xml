@@ -65,6 +65,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textAlignment="center"
+        android:hint="@string/result"
         android:textColor="@color/colorBlack"
         app:layout_constraintTop_toBottomOf="@id/ops_lyt"
         android:layout_marginTop="@dimen/_10sdp"

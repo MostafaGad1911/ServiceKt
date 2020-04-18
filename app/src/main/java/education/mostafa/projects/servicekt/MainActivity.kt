@@ -97,10 +97,12 @@ class MainActivity : AppCompatActivity(), main_view {
 
     override fun validInputs(): Boolean {
         if (first_num_txt.text.toString().isNullOrEmpty()) {
+            result_txt.setText("")
             first_num_txt.setError(resources.getString(R.string.num_error))
             operations_spin.setSelection(0)
             return false
         } else if (second_num_txt.text.toString().isNullOrEmpty()) {
+            result_txt.setText("")
             operations_spin.setSelection(0)
             second_num_txt.setError(resources.getString(R.string.num_error))
             return false
